@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BS Programming</title>
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/font.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="../js/js.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="../images/logo.png" style="height:150%;">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a id="meabout" href="#about">ABOUT</a></li>
+              <li><a href="#services">SERVICES</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+              <ul>Choose your language: <a href="../fr/index.html">Francais</a> |
+              <a href="">English</a></ul>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                    <div class="banner-top">
+                        <div class="overlay">
+                            <div class="container">
+                                <div class="banner-info text-center">
+                                  <h3 class="ml10">
+                                    <span class="text-wrapper">
+                                      <span class="letters1">Baptiste Simon</span>
+                                    </span>
+                                  </h3>
+                                  <h1 class="ml10">
+                                    <span class="text-wrapper">
+                                      <span class="letters">Application Developper</span>
+                                    </span>
+                                  </h1>
+                                  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                                  <script>
+                                      // Wrap every letter in a span
+                                    var textWrapper = document.querySelector('.letters');
+                                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                                    var textWrapper = document.querySelector('.letters1');
+                                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                                    
+                                    anime.timeline({loop: true})
+                                      .add({
+                                        targets: '.ml10 .letter',
+                                        rotateY: [-90, 0],
+                                        duration: 1300,
+                                        delay: (el, i) => 45 * i
+                                      }).add({
+                                        targets: '.ml10',
+                                        opacity: 0,
+                                        duration: 1000,
+                                        easing: "easeOutExpo",
+                                        delay: 1000
+                                      });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <div class="item">
+                  <div class="banner-top1">
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="banner-info text-center">
+                              <div class= "box">
+                                <h1 class="text-wh">Conception</h1>
+                                <h3 class="text-wh mx-auto my-4">All you need for the conception of your solution</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              
+                <div class="item">
+                  <div class="banner-top2">
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="banner-info text-center">
+                                <div class= "box">
+                                  <h1 class="text-wh">Custom development</h1>
+                                  <h3 class="text-wh mx-auto my-4">Come and discuss your project and let's find the solutions together</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+          
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+    </div>
+
+    <!-- General info -->
+    <div id="about" class="container-fluid">
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-6">
+            <h1><strong>Who am I?</strong></h1><br>
+            <h3>Holder of a computer science degree, a Bachelor in technical sale and a Master in management, 
+            I have 5 years of professional experience acquired in sales and software integration, in business
+             resource analysis, in project management and in design of solutions in the fields of automation, CAD and IoT.</h3><br>
+            <h3>Passionate about programming for more than 15 years, I have finally decided to professionalize my approach and to make it
+               my job. A level 6 Python application developer diploma (bac +3/4) at OpenClassRooms decided me to orient 
+               my professional life in this direction.  </h3><br>
+            <p>IoT - Internet Of Things<br>
+                Thanks to our experience on the IoT networks, we have the possibility to accompany you in innovative projects.
+            </p>
+            <p>Our services seek to target individuals, associations or companies who have a need for web or application development. </p>
+            <button class="btn btn-default btn-lg">Get in Touch</button>
+          </div>
+          <div class="col-sm-4">
+            <img src="../images/logo.png" style="width:100%;" alt="Logo" class="slideanim">
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+      
+      <div class="container-fluid bg-grey">
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-4">
+            <!-- https://pixabay.com/fr/photos/outils-poin%C3%A7on-pinces-antique-1083796/ -->
+            <img src="../images/competences.jpg" style="width:100%;" alt="Competences" class="slideanim">
+          </div>
+          <div class="col-sm-6">
+            <h1><strong>Our skills</strong></h1><br><br>
+            <h3><strong>Front-end : </strong>HTML, CSS et JS </h3><br>
+            <h3><strong>Back-end : </strong>Python, C, php, MySQL, PostgreSql, API integration et JS</h3><br>
+            <h3><strong>IoT : </strong>C for Arduino, MicroPython, LoRaWAN, NB-IoT and Cat-M1</h3><br>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+      <!-- // General info -->
+      <!-- Services -->
+      <div id="services" class="container-fluid text-center">
+        <h2>SERVICES</h2>
+        <h4>What we offer</h4>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-off logo-small slideanim"></span>
+            <h4>Website creation</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-edit logo-small slideanim"></span>
+            <h4>Web Development</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-console logo-small slideanim"></span>
+            <h4>Script creation</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-resize-full logo-small slideanim"></span>
+            <h4>Conception réactive</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-barcode logo-small slideanim"></span>
+            <h4>Embedded development</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench logo-small slideanim"></span>
+            <h4>Specific Project</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Services -->
+      <!-- Portfolio -->
+      <div id="portfolio" class="container-fluid text-center bg-grey">
+        <h2>Portfolio</h2>
+        <h4>What we have created</h4>
+        <div class="row text-center row-flex">
+          <div class="col-sm-6 project row-flex">
+            <div class="thumbnail">
+              <a href="http://207.154.252.147/sunneberg/" target="_blank">
+                <img src="../images/sunnenberg.PNG" alt="Sunnenebrg">
+              </a>
+              <p><strong>Sunnenberg Project</strong></p>
+              <p>Website creation for agriculture <br>
+              <strong>Framework:</strong> Django</p>
+            </div>
+          </div>
+          <div class="col-sm-6 project row-flex">
+            <div class="thumbnail">
+              <a href="http://142.93.233.149/myfoodapp/" target="_blank">
+                <img src="../images/OpenFood.PNG" alt="OpenFood">
+              </a>
+              <p><strong>Training's Project</strong></p>
+              <p>Project working with OpenFoodFact API </p>
+              <p>  Finding subsitute and register it to you account <br>
+                <strong>Framework:</strong> Django</p>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center row-flex">
+          <div class="col-sm-6 project row-flex">
+            <div class="thumbnail">
+              <a href="https://gbapp-baptiste.herokuapp.com/" target="_blank">
+                <img src="../images/GranPy.PNG" alt="GranPy">
+              </a>
+              <p><strong>Training's Project</strong></p>
+              <p>Project working with REST API </p>
+              <p>Finding a place when typing a name "Tour Eiffel" for exemple and display it on a map and show info found Wikipedia<br>
+                <strong>Framework:</strong> Flask</p>
+            </div>
+          </div>
+          <div class="col-sm-6 project">
+            <div class="thumbnail">
+              <img src="../images/qrpc.PNG" alt="QRPC">
+              <p><strong>QRPC</strong></p>
+              <p>Co-creator on QR-code solution </p>
+              <p>Register on the website and order items with your personnal QR-code<br>
+              <strong>Framework:</strong> MVC on php</p>
+              <p></p>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <!-- // Portfolio -->
+
+      
+      <div id="contact" class="container-fluid text-center">
+        <div class="container">
+            <form action="mail.php" method="post">
+            
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Email subject..">
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+            
+                <input type="submit" value="Submit">
+            
+            </form>
+        </div>
+      </div>
+
+      <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>FOOTER</p>
+      </footer>
+
+</body>
+
+</html>
