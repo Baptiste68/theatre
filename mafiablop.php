@@ -5,10 +5,10 @@ include("fonctions/fonctions.php");
 
 //on se connecte à la base de données (à adapter/remplacer avec votre système de connexion)
 $BDD = array();
-$BDD['serveur'] = "localhost";
+$BDD['serveur'] = "localhost:3307";
 $BDD['login'] = "root";
-$BDD['pass'] = "";
-$BDD['bdd'] = "nom_de_la_base_de_donnees";
+$BDD['pass'] = "root";
+$BDD['bdd'] = "theatre";
 $mysqli = mysqli_connect($BDD['serveur'],$BDD['login'],$BDD['pass'],$BDD['bdd']);
 if(!$mysqli) exit('Connexion MySQL non accomplie!');
 
@@ -39,7 +39,7 @@ if(!$mysqli) exit('Connexion MySQL non accomplie!');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
               <img src="./images/logo.png" style="height:150%;">
             </a>
           </div>
@@ -66,6 +66,7 @@ if(!$mysqli) exit('Connexion MySQL non accomplie!');
             <h3>Nous vous laissons maintenant le découvrir en espérant que vous prendrez autant de plaisir.</h3><br>
           </div>
           <div class="col-sm-4">
+          <img src="./images/logo.png">
           </div>
           <div class="col-sm-1"></div>
         </div>
@@ -85,7 +86,22 @@ if(!$mysqli) exit('Connexion MySQL non accomplie!');
       </div>
       <!-- // General info -->
 
-    
+      <div id="comms" class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+          <div style="border-bottom:1px solid black">
+          <h2>Postez un commentaire</h2>
+          <?php afficherFormulaireCommentaire("mafiablop.php"); ?>
+          <br /> <br />
+            </div>
+          <h2>Commentaires</h2>
+          <?php afficherCommentaires(); ?>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-1"></div>
+      </div>
+
+      
       <footer class="container-fluid text-center">
         <a href="#myPage" title="To Top">
           <span class="glyphicon glyphicon-chevron-up"></span>
