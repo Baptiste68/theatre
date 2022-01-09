@@ -121,7 +121,7 @@ function afficherFormulaireCommentaire($Page){
 			$Commentaire = nl2br($Commentaire);//nl2br nous permet d'ajouter des <br/> quand il y a un saut de ligne, nous permettra de garder les saut quand on 
 			
 			//on l'insère dans la bdd (vous remarquerez que je n'ai pas entouré les variable par ".$MaVariable.", ça fonctionne seulement si vous mettez des guillemets double en debut et en fin ("INSERT INTO....") ne fonctionnera pas avec des guillemets simples, exemple: ('INSERT INTO....')
-			if(mysqli_query($mysqli,"INSERT INTO commentaires SET 
+			if(pg_query($mysqli,"INSERT INTO commentaires SET 
 				pseudo = '$Pseudo',
 				commentaire = '$Commentaire',
 				quand = ".time())){//time() donne le timestamp actuel, on pourra le manipuler avec la fonction date(), exemple: date("H:i d-m-Y",quand)
@@ -174,8 +174,8 @@ function afficherFormulaireCommentaire($Page){
 function afficherCommentaires($IdArticle=0){
 	global $mysqli;//permet à la variable $mysqli d'être utilisée dans la fonction
 	//on va chercher les commentaires qui correspondent à l'id de l'article (si mentionné)
-	$req = mysqli_query($mysqli,"SELECT * FROM commentaires ORDER BY id ASC");
-	if(mysqli_num_rows($req)==0) {
+	$req = pg_query($mysqli,"SELECT * FROM commentaires ORDER BY id ASC");
+	if(pg_num_rows($req)==0) {
 		echo "<p>Aucun commentaire pour le moment.</p>";
 	} else {
 		while($infos = mysqli_fetch_assoc($req)) {

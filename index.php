@@ -8,8 +8,12 @@ $BDD = array();
 $BDD['serveur'] = "localhost:3307";
 $BDD['login'] = "root";
 $BDD['pass'] = "root";
-$BDD['bdd'] = "theatre";
-$mysqli = mysqli_connect($BDD['serveur'],$BDD['login'],$BDD['pass'],$BDD['bdd']);
+$BDD['bdd'] = "theatre";$localhost = "";
+$dbname = "";
+$user = "";
+$foo = "";
+$mysqli = pg_connect("host=$localhost dbname=$dbname user=$user password=$foo");
+//$mysqli = mysqli_connect($BDD['serveur'],$BDD['login'],$BDD['pass'],$BDD['bdd']);
 if(!$mysqli) exit('Connexion MySQL non accomplie!');
 
 
